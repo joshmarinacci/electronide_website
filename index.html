@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Electron IDE</title>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<style type='text/css'>
+body {
+    position: relative;
+    padding-top: 70px;
+}
+
+.scrollpad {
+    padding-top: 70px;
+}
+</style>
+
+  </head>
+  <body data-spy='scroll' data-target='#navbar' data-offset-top='70'>
+
+
+<nav id='navbar' class='navbar navbar-default navbar-fixed-top' role='navigation'>
+    <div class='container-fluid'>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Electron</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#what">What is Electron?</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#install">Install</a></li>
+                <li><a href="#contribute">Contribute</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+</nav>
+
+<div class='container'>
+
+    <div class='row scrollpad'>
+        <div class='col-md-12'>
+            <div class="jumbotron">
+              <div class='row'>
+                  <div class='col-md-6'>
+                      <h1>Electron</h1>
+                      <h2>The better way to Arduino</h2>
+                      <p>A new open source IDE for Arduino
+                          and compatible boards, focused
+                          on ease of use and a great out of the box experience.
+                      </p>
+                  </div>
+                  <div class='col-md-6'>
+                      <img src='screenshot.png' class='img-responsive'>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div id='what' class='row scrollpad'>
+        <div class='col-md-8'>
+            <h1>What Is Electron?</h1>
+
+            <p class='lead'>Electron is easy</p>
+            <p>Electron focuses on ease of use and a great out of the box experience. </p>
+
+            <p class='lead'>Electron is a real editor.</p>
+            <p> By using Ace, it hash line numbers, syntax highlighting, and proper keybindings.</p>
+
+            <p class='lead'>Electron is always up to date</p>
+            <p>
+                  It can auto-install many libaries and board definitions on the fly,
+                  and can get new libaries as they are added to the repo, without updating Electron itself.
+                  All definitions are contributed by the community to a separate repo. With a quick
+                  <code>npm update</code> you'll get all of the latest boards and libraries.
+            </p>
+            <p class='lead'>Electron is Open Source</p>
+            <p>
+                Electron is a new open source IDE for arduino, built in Node, Javascript and HTML.
+                The code is released under the BSD license for maximum sharing.
+                Do whatever you want with the code, but some <a href='#contribute'>pull requests</a>
+                 would be welcome.
+                Note: Electron is not affiliated with the Arduino corporation or the official Arduino IDE.
+            </p>
+
+        </div>
+    </div>
+
+
+    <div id='news' class='row scrollpad'>
+        <div class='col-md-8'>
+            <h1>News</h1>
+            <h3>0.2 released</h3>
+            <p>I’m happy to announce Electron v0.2. We’ve done a ton of work to improve the
+                compiler and library tools. The biggest news is Windows and Linux
+                support. Also, you don’t need to pre-install the regular Arduino IDE anymore.
+                Electron will auto-download it’s own copy of the required toolchain.  Here’s the
+                details:
+            </p>
+            <ul>
+                <li> Initial Windows and Linux support!</li>
+                <li> You don’t need to modify settings.js anymore. Electron will auto detect your Arduino/Sketchbook dir.</li>
+                <li> You don’t need the regular Arduino IDE installed anymore. The appropriate toolchain will be auto-downloaded for you the first time you compile something.</li>
+                <li> User installed libs work now. Note that user installed libs take a priority over libs installed by the IDE.</li>
+                <li> the serial port will be automatically closed and reopened when you upload a sketch. If this crashes your computer please let me know. I might need to increase the timeouts.</li>
+                <li> Preliminary support for auto-detecting which board you are using by the USB VID/PID. Special thanks to PixnBits for that.</li>
+                <li> Set the serial port speed</li>
+                <li> Sketch rename works now</li>
+                <li> download progress is shown in the browser (partially)</li>
+                <li> tons of under the hood fixes</li>
+                <li> auto scroll the console</li>
+            </ul>
+
+            <p>The <code>arduino-data</code> project was also updated with new boards an libraries:</p>
+            <ul>
+                <li> New boards: TinyLily and Gamebuino</li>
+                <li> More networking libs: CmdMessenger, OneWire, PS2Keyboard, SerialControl, SSoftware2Mobile, Webduino</li>
+                <li> More specs on various boards</li>
+                <li> The rest of the built in libraries: Ethernet, Firmata, GSM, LiquidCrystal, SD, SoftwareSerial, TFT, WiFi</li>
+                <li> Support library sub-dependencies</li>
+            </ul>
+
+            <p>Thanks to contributors:</p>
+            <ul>
+                <li> Dan O’Donovan / Dan-Emutex</li>
+                <li> Nick Oliver / PixnBits</li>
+                <li> Sean McCarthy / seandmcarthy</li>
+                <li> trosper</li>
+            </ul>
+
+
+            <h3>v0.1 released</h3>
+            <p>I'm happy to announce Electron v0.1. This release has a ton of fixes
+                to the toolchain. It should support 3rd party libs properly, and
+                has preliminary support for Linux. I've also made a bunch of
+                small GUI tweaks and the first attempt at a serial console.</p>
+
+            <p>Note that on Linux you should use the arduino-core package
+                provided by your OS, and make sure that node --version returns something valid. You might have another program called node in it's place.
+            </p>
+
+            <p>For this release please test compiling all of your sketches to see where it breaks. Undoubtedly we will have more libraries and compiler fixes to add. File issues on the github project
+            </p>
+
+            <p>Special thanks to friends of the show Sean McCarthy, HippyJake, and Dean Iverson for their patches.</p>
+
+        </div>
+    </div>
+
+    <div id='install' class='row scrollpad'>
+        <div class='col-md-8'>
+            <h1>Install</h1>
+            <p>While we are planning a downloadable app in the future, for now you must be comfortable
+            with the command line. Electron is written in NodeJS and uses your webbrowser
+            for the interface. While it <em>should</em> work on Windows and Linux, most testing
+            has been Mac so far. <a href='#contribute'>(More testers are welcome)</a></p>
+
+            <p>To test out Electron you must:</p>
+
+            <ul>
+                <li>Install node with npm if you don't already have it.</li>
+                <li>Check out the code: <code>git clone https://github.com/joshmarinacci/ElectronIDE</code></li>
+                <li>Install all deps with <code>cd ElectronIDE; npm install</code></li>
+                <li>Run <code>node electron</code></li>
+                <li>open your browser to <code>http://localhost:54329/</code></li>
+            </ul>
+
+            <h4>A note on Linux</h4>
+            <p>In theory Electron should just work on Linux since it's just JavaScript underneath.
+                However, some users have reported that some Linux distros have an existing program
+                called <code>node</code> that is actually an ancient packet radio program. Try
+                running <code>node --version</code> to make sure you really have NodeJS 10.x and not some other
+                program. Uninstall it if you do. NodeJS might also be run as <code>nodejs</code> instead of node.
+            </p>
+
+        </div>
+    </div>
+
+
+    <div id='contribute' class='row scrollpad'>
+        <div class='col-md-8'>
+            <h1>Contribute</h1>
+
+            <p>It's early days for Electron. We need your help. Our most urgent need is
+                testing. Test every sketch you have. Test every board you have. If something
+                doesn't compile, but does in the official IDE, then that's a bug. Let us
+                know and we'll fix it right away.</p>
+
+            <p>All of the code is in our <a href='https://github.com/joshmarinacci/ElectronIDE'>Github Project</a></p>
+            <p>File bugs and feature requests on the <a href='https://github.com/joshmarinacci/ElectronIDE/issues?state=open'>issue tracker</p>
+
+
+        </div>
+    </div>
+
+    <div class='row'>
+        <div class='col-md-8'>
+            &nbsp;
+        </div>
+    </div>
+
+
+
+  </body>
+</html>
